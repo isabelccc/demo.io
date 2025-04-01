@@ -1,10 +1,7 @@
 # demo.io
 isabel chen demo web
 
----
-layout: default
-title: Home
----
+
 
 # 👋 Welcome
 
