@@ -3,93 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Isabel Chen | Software Engineer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 1.5rem 2rem;
-      text-align: center;
-    }
-    header img {
-      max-width: 300px;
-      height: auto;
-      margin: 1rem 0;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    section {
-      padding: 2rem;
-    }
-    .card {
-      background: white;
-      padding: 1.5rem;
-      margin: 1rem 0;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #eee;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-  </style>
+  <title>Demo Site</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Welcome to My Demo</h1>
     <img src="myimage.png" alt="Demo Image">
-    
+    <p>This is a simple static site hosted on GitHub Pages.</p>
   </header>
 
+  <nav>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <section>
-   
-
-    <div class="card">
-      <h2>Current Projects</h2>
-      <ul>
-        <li><strong>TriLearn:</strong> AI-powered study assistant to help users learn anything in 3 months.</li>
-        <li><strong>CARE Diet Management Module (GSoC 2025):</strong> Contributing to the open-source healthcare platform with diet planning & calorie tracking tools.</li>
-        <li><strong>Multithreaded C++ Web Crawler:</strong> Efficient spider with domain control and parallel fetch logic.</li>
-        <li><strong>AI Note Summarizer:</strong> A modern React-based app that uses LLMs to help users take and review structured notes.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Languages:</strong> Python, Java, C++, SQL, JavaScript, TypeScript</li>
-        <li><strong>Frontend:</strong> React, Tailwind CSS, HTML, Vite</li>
-        <li><strong>Backend:</strong> Node.js, Flask, Django, Express.js</li>
-        <li><strong>Tools:</strong> Git, Docker, MongoDB, MySQL, AWS, OAuth2</li>
-        <li><strong>Concepts:</strong> System Design, Distributed Systems, Databases, AI & LLMs</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>Education</h2>
-      <p>B.S. in Computer Science, University of Michigan – Ann Arbor (Expected Dec 2025)</p>
-      <p>Minor in Statistics</p>
-      <p>Relevant Courses: EECS 281, 370, 442, 445, 484, 485, STATS 306, 413</p>
+    <div class="card" id="about">
+      <h2>About This Project</h2>
+      <p>This project showcases how to deploy a demo site using GitHub Pages. It's a great way to present your work or portfolio.</p>
+      <p>I'm a Computer Science student passionate about building innovative software solutions that make a difference. My interests include distributed systems, machine learning, and web development.</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <strong>AI Note Summarizer</strong>
+          <p>A modern React-based app that uses LLMs to help users take and review structured notes.</p>
+        </li>
+        <li>
+          <strong>Climate Risk Analyzer</strong>
+          <p>Developed data analysis pipelines in Python/R for climate risk assessment, contributing to a published paper.</p>
+        </li>
+        <li>
+          <strong>Web Crawler</strong>
+          <p>Built a multithreaded crawler in C++ with efficient domain control and parallel fetch logic.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card" id="experience">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <h3>Software Engineering Intern - Tech Corp</h3>
+        <p class="date">Summer 2024</p>
+        <ul>
+          <li>Developed and maintained microservices using Node.js and Express</li>
+          <li>Implemented real-time data synchronization features using WebSocket</li>
+          <li>Improved API response times by 40% through caching optimization</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>Research Assistant - University Lab</h3>
+        <p class="date">2023 - Present</p>
+        <ul>
+          <li>Conducting research on distributed systems and cloud computing</li>
+          <li>Published 2 papers in international conferences</li>
+          <li>Mentored 3 junior researchers in project development</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" id="contact">
       <h2>Contact</h2>
       <p>Feel free to <a href="mailto:cxl0603@gmail.com">email me</a> with any questions.</p>
+      <div class="social-links">
+        <p>Find me on:</p>
+        <ul>
+          <li><a href="https://github.com/isabelccc">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/isabelccc">LinkedIn</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Isabel Chen | Built with ❤️ using GitHub Pages</p>
+    <p>&copy; 2025 Isabel C. | Powered by GitHub Pages</p>
   </footer>
 </body>
 </html>
