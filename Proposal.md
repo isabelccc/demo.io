@@ -49,7 +49,8 @@ This project will:
 ## Detailed Project Description
 
    
-<img width="800" alt="Screenshot 2025-04-05 at 10 48 36 PM" src="https://github.com/user-attachments/assets/cb32a11b-eb9a-41bf-81af-cf2b37dcb2e2" />
+
+![Project Overview (3)](https://github.com/user-attachments/assets/08b3d9d3-64d9-4a4f-ad12-84095a787f9f)
 
 
                
