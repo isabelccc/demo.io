@@ -36,7 +36,6 @@
 ## Motivation
 
 omegaUp’s mission to democratize competitive programming education resonates deeply with me. I’ve always been passionate about open learning and developer tools — and this project combines both. By eliminating zip-based workflows and enabling seamless problem creation, this proposal supports the broader vision of empowering instructors and mentors worldwide to contribute more easily.
-Benefits to the Community
 
 This project will:
 - Simplify the problem authoring experience
