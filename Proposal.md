@@ -49,6 +49,16 @@ This project will:
 
 ## Detailed Project Description
 
+[omegaUp Create/Edit UI]
+        |
+     (iframe)
+        ↓
+[ Problem Creator UI ]
+        ↑
+  JSON Metadata via postMessage
+        ↓
+[ Backend REST API ]
+
 ### Backend
 
 **Languages:** PHP, TypeScript
@@ -78,10 +88,10 @@ This project will:
 
 #### Integration Plan
 
-- Add Problem Creator launch button in `Create.vue` and `Edit.vue`
-- Use iframe/modal to host Problem Creator UI
-- Communicate via `postMessage`
-- Display inline validation, loading states, and metadata preview
+	1.	Embed Editor: Open Problem Creator in an <iframe> or modal.
+	2.	Data Passing: Use postMessage to send/receive JSON metadata between the iframe and parent.
+	3.	Metadata Binding: When saving, automatically fill in omegaUp’s form fields using returned metadata.
+	4.	UX Improvements: Show loading indicators, validation errors, and success confirmations.
 
 #### File Structure
 ```
