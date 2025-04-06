@@ -49,53 +49,10 @@ This project will:
 
 ## Detailed Project Description
 
-                           ┌────────────────────────────┐
-                           │ omegaUp Create/Edit Problem│
-                           │        (Vue.js UI)         │
-                           └────────────┬───────────────┘
-                                        │
-                                        │
-                                        ▼
-                            ┌─────────────────────────┐
-                            │ Problem Creator (iframe)│
-                            │    Embedded in modal    │
-                            └────────────┬────────────┘
-                                         │
-         ┌───────────────────────────────┼─────────────────────────────────┐
-         │                               │                                 │
-         ▼                               ▼                                 ▼
-  [Receive problem]             [User edits metadata]             [User uploads/edits test cases]
-  [via postMessage]             [markdown statements]             [JSON settings, constraints]
+   
 
-                                         │
-                                         ▼
-                        ┌────────────────────────────────────┐
-                        │ postMessage: Send JSON metadata    │
-                        │ back to omegaUp parent component   │
-                        └────────────────────────────────────┘
-                                         │
-                                         ▼
-                           ┌────────────────────────────┐
-                           │ omegaUp frontend captures   │
-                           │ and validates metadata      │
-                           └────────────┬───────────────┘
-                                        │
-                                        ▼
-                             ┌────────────────────────┐
-                             │ Backend REST API Layer │
-                             └────────────┬───────────┘
-                                          │
-      ┌────────────────────────────┬──────┼────────────┬────────────────────────┐
-      ▼                            ▼                    ▼                        ▼
-[ /api/problem/saveMetadata ]  [ /validateMetadata ]  [ /commitMetadata ]  [ /loadMetadata ]
-(Saves draft JSON to disk/DB) (Checks structure)     (Zips & creates)     (Pre-populate editor)
-
-                                          │
-                                          ▼
-                            ┌────────────────────────────┐
-                            │ Problem stored/published   │
-                            │ version created/updated    │
-                            └────────────────────────────┘
+<img width="334" alt="Screenshot 2025-04-05 at 10 46 17 PM" src="https://github.com/user-attachments/assets/1bc95f49-cf02-48ab-b808-258ee20d4da2" />
+               
 
 ### Backend
 
