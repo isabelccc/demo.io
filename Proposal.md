@@ -69,34 +69,34 @@ possible request parameters:
 ```ts
 {
   problem_alias: string;             // Unique alias for the problem
-  title: string;                     // Problem title
-  source: string;                    // Problem source or attribution
+  title: string;                    
+  source: string;                   
   visibility: number;                // Visibility level (e.g. 1 = public)
   languages: string[];               // List of allowed languages
   time_limit: number;                // Time limit in milliseconds
   memory_limit: number;              // Memory limit in kilobytes
-  overall_wall_time_limit: number;   // Total wall time in milliseconds
+  overall_wall_time_limit: number;   
   validator: {                       // Validator configuration
-    name: string;                    // 'token', 'token-caseless', 'token-numeric', 'literal', 'custom'
+    name: string;                    
     custom_validator?: {            
-      language: string;              // Language for custom validator
-      source: string;                // Source code for custom validator
+      language: string;           
+      source: string;               
     }
   };
-  statements: {                      // Problem statements
-    [language: string]: {            // e.g. 'en', 'es'
-      markdown: string;              // Markdown statement text
+  statements: {                    
+    [language: string]: {          
+      markdown: string;             
       images: {                      
-        [filename: string]: string;  // Base64-encoded image content
+        [filename: string]: string;  
       }
     }
   };
-  test_cases: {                      // Problem test cases
+  test_cases: {                  
     cases: Array<{
-      name: string;                  // Test case name
-      weight: number;                // Case weight for scoring
-      input: string;                 // Raw input string
-      output: string;                // Expected output string
+      name: string;                  
+      weight: number;                
+      input: string;            
+      output: string;         
     }>;
     sample_cases: Array<{
       name: string;
@@ -113,9 +113,9 @@ anticipated response:
 <pre lang="md">
 ```ts
 {
-  status: string;                   // 'ok' on success
-  draft_id: number;                 // Unique identifier for this draft
-  timestamp: number;                // Server timestamp of save
+  status: string;                  
+  draft_id: number;                
+  timestamp: number;               
 }
  ```
 </pre>
@@ -123,12 +123,19 @@ anticipated response:
    - Load metadata for existing problems
 requested parameter:
 
-`{
+<pre lang="md">
+```ts
+{
   problem_alias?: string;          
   draft_id?: number;             
-}`
+}
+ ```
+</pre>
+
 response (typecript):
-`{
+<pre lang="md">
+```ts
+{
   status: string;                   
   metadata: {                      
     // ...all problem fields
@@ -139,35 +146,49 @@ response (typecript):
     identity_id: number;
     username: string;
   }>
-}`
+}
+ ```
+</pre>
 
 3. `/api/problem/validateMetadata/` (POST)
    - Validate structure using existing ProblemParams logic
      Request Parameters:  `Same as saveMetadata`
      Response :
-`{
+<pre lang="md">
+```ts
+{
   status: string;                  
   errors: Array<{                 
     field: string;                
     message: string;               
     type: string;                   
   }>
-}`
+}
+ ```
+</pre>
 
 
 4. `/api/problem/commitMetadata/` (POST)
    - Convert JSON to zip, use internal `apiCreate` or `apiUpdate`
    Request Parameters:
-`{
+<pre lang="md">
+```ts
+{
   draft_id: number;                 // Draft ID to commit
   problem_alias?: string;           // Optional: specify a specific alias for new problems
   commit_message?: string;          // Optional: message describing the changes
-}`
+}
+ ```
+</pre>
 response:
-`{
+<pre lang="md">
+```ts
+{
   status: string;                  // 'ok' on success
   problem_alias: string;           // The problem alias (useful for newly created problems)
-}`
+}
+ ```
+</pre>
 #### Optional: Version Tracking
 
 - Create `Problems_Drafts` table with versioning, timestamp, and author ID
