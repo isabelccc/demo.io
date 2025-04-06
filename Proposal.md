@@ -51,7 +51,7 @@ This project will:
 
    
 
-<img width="334" alt="Screenshot 2025-04-05 at 10 46 17 PM" src="https://github.com/user-attachments/assets/1bc95f49-cf02-48ab-b808-258ee20d4da2" />
+<img width="600" alt="Screenshot 2025-04-05 at 10 46 17 PM" src="https://github.com/user-attachments/assets/1bc95f49-cf02-48ab-b808-258ee20d4da2" />
                
 
 ### Backend
@@ -262,20 +262,20 @@ frontend/www/js/omegaup/problem/
 
 | **Phase** | **Period** | **Tasks** | **Details** | **Estimated Hours** |
 |-----------|------------|-----------|-------------|---------------------|
-| 🧭 Phase 1: Planning & Architecture | Community Bonding (May 20 – June 16) | Explore codebase, repo structure, workflows | Study Problem Creator design, omegaUp backend, submit a minor bugfix PR | 20 |
+| Phase 1: Planning & Architecture | Community Bonding (May 20 – June 16) | Explore codebase, repo structure, workflows | Study Problem Creator design, omegaUp backend, submit a minor bugfix PR | 20 |
 | | Week 1 | Design architecture | Define iframe-based flow, REST endpoints, DB schema for drafts/versioning | 15 |
 | | Week 2 | Write tech spec | Detail frontend/backend interfaces, postMessage contracts, security rules | 15 |
-| 🛠️ Phase 2: Backend Implementation | Week 3 | Draft save/load endpoints | Create `/saveMetadata`, `/loadMetadata`, file-based or DB draft storage | 25 |
+| Phase 2: Backend Implementation | Week 3 | Draft save/load endpoints | Create `/saveMetadata`, `/loadMetadata`, file-based or DB draft storage | 25 |
 | | Week 4 | Validate and commit APIs | Add `/validateMetadata`, `/commitMetadata`, zip assembly, permissions check | 25 |
 | | Week 5 | Test case + versioning logic | Implement upload, preview, diff, rollback logic; update DB schema if needed | 30 |
 | | Week 6 | Integrate with ProblemController | Wire endpoints into existing create/edit logic; handle legacy zip workflows | 20 |
-| 💻 Phase 3: Frontend Integration | Week 7 | Build Vue modal/iframe UI | Embed Problem Creator, add tab navigation, use `postMessage` bridge | 30 |
+|  Phase 3: Frontend Integration | Week 7 | Build Vue modal/iframe UI | Embed Problem Creator, add tab navigation, use `postMessage` bridge | 30 |
 | | Week 8 | Draft autosave + state recovery | Implement timed autosave, load draft on reload, unsaved warning | 30 |
 | | Week 9 | Edit UI + version control | Add view/edit tabs, version history viewer, rollback options | 40 |
 | | Week 10 | Metadata, statement, test case editors | Build markdown preview, case validator UI, real-time field validation | 50 |
-| 🧪 Phase 4: Testing & QA | Week 11 | Backend + frontend test coverage | PHPUnit tests for APIs, Vue unit tests, Cypress end-to-end workflows | 30 |
+| Phase 4: Testing & QA | Week 11 | Backend + frontend test coverage | PHPUnit tests for APIs, Vue unit tests, Cypress end-to-end workflows | 30 |
 | | Week 12 | Manual QA, bug fixes, polish | Fix regressions, ensure backward compatibility, prepare demo test run | 20 |
-| 📚 Phase 5: Docs & Final Submission | Week 12 | Write user + dev documentation | Usage guide, dev notes, tutorial for adding/editing problems via new flow | 10 |
+|  Phase 5: Docs & Final Submission | Week 12 | Write user + dev documentation | Usage guide, dev notes, tutorial for adding/editing problems via new flow | 10 |
 | |  | Final submission | Upload code, write GSoC report, link screencast (optional) | 10 |
 | **TOTAL** | **May 20 – August 25** | | | **350 hours** |
 
