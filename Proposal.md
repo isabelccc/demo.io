@@ -192,6 +192,7 @@ This project will:
 #### Optional: Version Tracking
 
 - Create `Problems_Drafts` table with versioning, timestamp, and author ID
+ <img width="800" src="https://www.mermaidchart.com/raw/4944f0ea-4e04-4c24-905a-01aa598177e7?theme=light&version=v0.1&format=svg"/>
 
   Client                      Backend                      Database
   |                            |                            |
