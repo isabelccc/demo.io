@@ -192,31 +192,7 @@ This project will:
 #### Optional: Version Tracking
 
 - Create `Problems_Drafts` table with versioning, timestamp, and author ID
- <img width="800" src="https://www.mermaidchart.com/raw/4944f0ea-4e04-4c24-905a-01aa598177e7?theme=light&version=v0.1&format=svg"/>
 
-  Client                      Backend                      Database
-  |                            |                            |
-  |-- saveMetadata() --------->|                            |
-  |                            |-- validate metadata ------>|
-  |                            |-- store in ProblemDrafts ->|
-  |<-- draft_id, timestamp ----|                            |
-  |                            |                            |
-  |-- loadMetadata() --------->|                            |
-  |                            |-- retrieve draft ---------->|
-  |                            |<-- metadata ----------------|
-  |<-- problem metadata -------|                            |
-  |                            |                            |
-  |-- validateMetadata() ----->|                            |
-  |                            |-- validate structure & content |
-  |<-- validation result ------|                            |
-  |                            |                            |
-  |-- commitMetadata() ------->|                            |
-  |                            |-- retrieve draft ---------->|
-  |                            |<-- draft data --------------|
-  |                            |-- create temp files -------|
-  |                            |-- build problem zip -------|
-  |                            |-- update/create problem --->|
-  |<-- problem_alias ----------|                            |
 
 ### Frontend
 
@@ -236,7 +212,7 @@ frontend/www/js/omegaup/problem/
  ├── Edit.vue
  └── ProblemCreatorModal.vue
 ```
-
+<img width="732" alt="Screenshot 2025-04-05 at 11 12 36 PM" src="https://github.com/user-attachments/assets/ce89a02d-f81d-4946-891a-db0744d12840" />
 ---
 
 ## User Experience
