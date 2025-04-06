@@ -65,44 +65,44 @@ This project will:
    - Save problem metadata (title, validator, cases, statements) as JSON
    - Store as draft in `problems_draft/`
 possible request parameters:
-`{
-  problem_alias: string;             
+{
+  problem_alias: string;             // Unique alias for the problem
   title: string;                     // Problem title
-  source: string;                    // Problem source/origin
-  visibility: number;                // Public, private, etc.
-  languages: string[];               // Allowed languages
-  time_limit: number;                // In milliseconds
-  memory_limit: number;              // In KB
-  overall_wall_time_limit: number;   // In milliseconds
-  validator: {                       // Validation settings
+  source: string;                    // Problem source or attribution
+  visibility: number;                // Visibility level (e.g. 1 = public)
+  languages: string[];               // List of allowed languages
+  time_limit: number;                // Time limit in milliseconds
+  memory_limit: number;              // Memory limit in kilobytes
+  overall_wall_time_limit: number;   // Total wall time in milliseconds
+  validator: {                       // Validator configuration
     name: string;                    // 'token', 'token-caseless', 'token-numeric', 'literal', 'custom'
     custom_validator?: {            
-      language: string;             
-      source: string;               
+      language: string;              // Language for custom validator
+      source: string;                // Source code for custom validator
     }
-  }
+  };
   statements: {                      // Problem statements
-    [language: string]: {            // 'es', 'en', 'pt', etc.
-      markdown: string;              // Statement content in markdown
+    [language: string]: {            // e.g. 'en', 'es'
+      markdown: string;              // Markdown statement text
       images: {                      
-        [filename: string]: string;  
+        [filename: string]: string;  // Base64-encoded image content
       }
     }
-  }
+  };
   test_cases: {                      // Problem test cases
     cases: Array<{
-      name: string;                  // Case name
-      weight: number;                // Points value
-      input: string;                 // Input data
-      output: string;                // Expected output
-    }>
-    sample_cases: Array<{          
-      name: string;                 
+      name: string;                  // Test case name
+      weight: number;                // Case weight for scoring
+      input: string;                 // Raw input string
+      output: string;                // Expected output string
+    }>;
+    sample_cases: Array<{
+      name: string;
       input: string;
       output: string;
-    }>
-  }
-}`
+    }>;
+  };
+}
 
 anticipated response:
 
