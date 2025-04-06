@@ -1,0 +1,189 @@
+# Google Summer of Code 2025 Proposal
+
+## Project Title: Integrate Problem Creator with Create/Edit Problem Workflows
+
+**Name:** Xiulin Chen  
+**Email:** cxl0603@gmail.com  
+**GitHub:** [isabelccc](https://github.com/isabelccc)  
+**GitHub Verification Handle:** cxl0603  
+
+---
+
+## Synopsis
+
+The Problem Creator is a visual interface introduced in a past GSoC project to simplify the creation and editing of programming problems on omegaUp. However, it is not yet fully integrated into omegaUp's platform. Authors are still required to download `.zip` files from the Problem Creator and manually upload them to omegaUp, making the workflow cumbersome and unintuitive. This project aims to eliminate this zip-based workflow by integrating the Problem Creator directly into the create/edit problem UI, allowing for real-time, browser-based editing and saving.
+
+---
+
+## Benefits to the Community
+
+This project will:
+- Simplify the problem authoring experience
+- Remove reliance on zip uploads/downloads
+- Enable real-time editing
+- Reduce entry barriers for educators and mentors
+- Increase contribution quality and accessibility
+
+By integrating directly into omegaUp, the community will benefit from a streamlined, modernized workflow that reflects modern expectations in education technology platforms.
+
+---
+
+## Deliverables
+
+- RESTful backend endpoints for metadata save/load/validation/commit
+- Integration with existing ProblemController logic
+- Frontend iframe/modal for Problem Creator
+- Secure communication between omegaUp and the embedded editor
+- Autosave/draft/versioning support (optional)
+- Cypress e2e tests
+- Final documentation
+
+---
+
+## Technical Skills
+
+**Programming Languages:** Python, C++, PHP, TypeScript, JavaScript, SQL, Bash  
+**Frameworks & Tools:** Vue.js, React, Next.js, Flask, Node.js, Docker, Git, GitHub Actions, MySQL/PostgreSQL, REST APIs  
+
+**Experience:**
+- Implemented custom search engine and query compiler in C++
+- Built and deployed a web-based assistant (TriLearn) with React, Tailwind, Flask, and GPT-4 APIs
+- Contributor to omegaUp: https://github.com/omegaup/omegaup/pull/8138, https://github.com/omegaup/omegaup/pull/8150
+
+---
+
+## Education
+
+**University:** University of Michigan – Ann Arbor  
+**Major:** Computer Science  
+**Minor:** Statistics  
+**Expected Graduation:** December 2025
+
+---
+
+## Motivation
+
+omegaUp’s mission to democratize competitive programming education resonates deeply with me. I’ve always been passionate about open learning and developer tools — and this project combines both. By eliminating zip-based workflows and enabling seamless problem creation, this proposal supports the broader vision of empowering instructors and mentors worldwide to contribute more easily.
+
+---
+
+## Detailed Project Description
+
+### Backend
+
+**Languages:** PHP, TypeScript
+
+#### REST Endpoints
+
+1. `/api/problem/saveMetadata/` (POST)
+   - Save problem metadata (title, validator, cases, statements) as JSON
+   - Store as draft in `problems_draft/`
+
+2. `/api/problem/loadMetadata/` (GET)
+   - Load metadata for existing problems
+
+3. `/api/problem/validateMetadata/` (POST)
+   - Validate structure using existing ProblemParams logic
+
+4. `/api/problem/commitMetadata/` (POST)
+   - Convert JSON to zip, use internal `apiCreate` or `apiUpdate`
+
+#### Optional: Version Tracking
+
+- Create `Problems_Drafts` table with versioning, timestamp, and author ID
+
+### Frontend
+
+**Tech Stack:** Vue.js, TypeScript, Axios, Bootstrap
+
+#### Integration Plan
+
+- Add Problem Creator launch button in `Create.vue` and `Edit.vue`
+- Use iframe/modal to host Problem Creator UI
+- Communicate via `postMessage`
+- Display inline validation, loading states, and metadata preview
+
+#### File Structure
+```
+frontend/www/js/omegaup/problem/
+ ├── Create.vue
+ ├── Edit.vue
+ └── ProblemCreatorModal.vue
+```
+
+---
+
+## User Experience
+
+- "Use Problem Creator" button launches editor
+- Metadata is loaded, edited, then saved without file download/upload
+- Problem auto-fills omegaUp fields post-save
+- Editing triggers re-open in view/edit mode
+
+---
+
+## Alternatives Considered
+
+**Custom CMS inside omegaUp:** Not scalable or intuitive for external contributors  
+**Manual content push via scripts:** Lacks feedback loop and revision history
+
+---
+
+## Security Impact
+
+- All endpoints require authentication and permission checks
+- File operations are scoped to the authenticated user
+- JSON validation prevents injection or corrupted data
+- No external scripts or third-party access required
+
+---
+
+## Deployment Plan
+
+- REST APIs deployed via normal omegaUp pipeline
+- Frontend modal added to Vue components
+- Database migration for draft table (if used)
+- Document GitHub webhook setup (if required in later extensions)
+
+---
+
+## Testing Plan
+
+### Backend:
+- Unit tests with PHPUnit for each endpoint
+- Validation cases for invalid JSON and missing fields
+- Integration tests for full metadata → zip → create
+- Security checks on permission scopes
+
+### Frontend:
+- Vue unit tests for modal/iframe communication
+- Cypress e2e: Create → Edit → Save → Validate → Commit flow
+- Manual test for error handling, preview mode, auth permissions
+
+---
+
+## Timeline and Hours
+
+| Period | Tasks | Estimated Hours |
+|--------|-------|-----------------|
+| Community Bonding (May 20 – June 16) | Understand omegaUp’s structure, study course repo workflow, submit minor PR | 20 |
+| Week 1–2 | GitHub integration and token auth | 40 |
+| Week 3–4 | Sync backend scripts and test with staging | 40 |
+| Week 5–6 | Add preview UI for maintainers, write automated CI validators | 50 |
+| Week 7–8 | Frontend UI for public GitHub content browsing | 50 |
+| Week 9–10 | UX polish, error handling, and fallback content logic | 40 |
+| Week 11 | Final QA, full demo test with course content | 30 |
+| Week 12 | Submit final code and documentation | 30 |
+| **Total** |  | **300+ hours** |
+
+---
+
+## Commitment
+
+- Weekly Availability: 40 hours  
+- No summer classes, internships, or travel  
+- Fully committed to GSoC for the entire program duration
+
+---
+
+Thank you for considering my proposal! I’m excited to contribute to omegaUp and help build tools that make programming education more accessible.
