@@ -49,15 +49,53 @@ This project will:
 
 ## Detailed Project Description
 
-[omegaUp Create/Edit UI]
-        |
-     (iframe)
-        ↓
-[ Problem Creator UI ]
-        ↑
-  JSON Metadata via postMessage
-        ↓
-[ Backend REST API ]
+                           ┌────────────────────────────┐
+                           │ omegaUp Create/Edit Problem│
+                           │        (Vue.js UI)         │
+                           └────────────┬───────────────┘
+                                        │
+                                        │
+                                        ▼
+                            ┌─────────────────────────┐
+                            │ Problem Creator (iframe)│
+                            │    Embedded in modal    │
+                            └────────────┬────────────┘
+                                         │
+         ┌───────────────────────────────┼─────────────────────────────────┐
+         │                               │                                 │
+         ▼                               ▼                                 ▼
+  [Receive problem]             [User edits metadata]             [User uploads/edits test cases]
+  [via postMessage]             [markdown statements]             [JSON settings, constraints]
+
+                                         │
+                                         ▼
+                        ┌────────────────────────────────────┐
+                        │ postMessage: Send JSON metadata    │
+                        │ back to omegaUp parent component   │
+                        └────────────────────────────────────┘
+                                         │
+                                         ▼
+                           ┌────────────────────────────┐
+                           │ omegaUp frontend captures   │
+                           │ and validates metadata      │
+                           └────────────┬───────────────┘
+                                        │
+                                        ▼
+                             ┌────────────────────────┐
+                             │ Backend REST API Layer │
+                             └────────────┬───────────┘
+                                          │
+      ┌────────────────────────────┬──────┼────────────┬────────────────────────┐
+      ▼                            ▼                    ▼                        ▼
+[ /api/problem/saveMetadata ]  [ /validateMetadata ]  [ /commitMetadata ]  [ /loadMetadata ]
+(Saves draft JSON to disk/DB) (Checks structure)     (Zips & creates)     (Pre-populate editor)
+
+                                          │
+                                          ▼
+                            ┌────────────────────────────┐
+                            │ Problem stored/published   │
+                            │ version created/updated    │
+                            └────────────────────────────┘
 
 ### Backend
 
@@ -68,19 +106,129 @@ This project will:
 1. `/api/problem/saveMetadata/` (POST)
    - Save problem metadata (title, validator, cases, statements) as JSON
    - Store as draft in `problems_draft/`
+possible request parameters:
+`{
+  problem_alias: string;             
+  title: string;                     // Problem title
+  source: string;                    // Problem source/origin
+  visibility: number;                // Public, private, etc.
+  languages: string[];               // Allowed languages
+  time_limit: number;                // In milliseconds
+  memory_limit: number;              // In KB
+  overall_wall_time_limit: number;   // In milliseconds
+  validator: {                       // Validation settings
+    name: string;                    // 'token', 'token-caseless', 'token-numeric', 'literal', 'custom'
+    custom_validator?: {            
+      language: string;             
+      source: string;               
+    }
+  }
+  statements: {                      // Problem statements
+    [language: string]: {            // 'es', 'en', 'pt', etc.
+      markdown: string;              // Statement content in markdown
+      images: {                      
+        [filename: string]: string;  
+      }
+    }
+  }
+  test_cases: {                      // Problem test cases
+    cases: Array<{
+      name: string;                  // Case name
+      weight: number;                // Points value
+      input: string;                 // Input data
+      output: string;                // Expected output
+    }>
+    sample_cases: Array<{          
+      name: string;                 
+      input: string;
+      output: string;
+    }>
+  }
+}`
 
+anticipated response:
+
+`{
+  status: string;                   // 'ok' on success
+  draft_id: number;                 // Unique identifier for this draft
+  timestamp: number;                // Server timestamp of save
+}`
 2. `/api/problem/loadMetadata/` (GET)
    - Load metadata for existing problems
+requested parameter:
+
+`{
+  problem_alias?: string;          
+  draft_id?: number;             
+}`
+response (typecript):
+`{
+  status: string;                   
+  metadata: {                      
+    // ...all problem fields
+  },
+  drafts?: Array<{                  
+    draft_id: number;
+    timestamp: number;
+    identity_id: number;
+    username: string;
+  }>
+}`
 
 3. `/api/problem/validateMetadata/` (POST)
    - Validate structure using existing ProblemParams logic
+     Request Parameters:  `Same as saveMetadata`
+     Response :
+`{
+  status: string;                  
+  errors: Array<{                 
+    field: string;                
+    message: string;               
+    type: string;                   
+  }>
+}`
+
 
 4. `/api/problem/commitMetadata/` (POST)
    - Convert JSON to zip, use internal `apiCreate` or `apiUpdate`
-
+   Request Parameters:
+`{
+  draft_id: number;                 // Draft ID to commit
+  problem_alias?: string;           // Optional: specify a specific alias for new problems
+  commit_message?: string;          // Optional: message describing the changes
+}`
+response:
+`{
+  status: string;                  // 'ok' on success
+  problem_alias: string;           // The problem alias (useful for newly created problems)
+}`
 #### Optional: Version Tracking
 
 - Create `Problems_Drafts` table with versioning, timestamp, and author ID
+
+  Client                      Backend                      Database
+  |                            |                            |
+  |-- saveMetadata() --------->|                            |
+  |                            |-- validate metadata ------>|
+  |                            |-- store in ProblemDrafts ->|
+  |<-- draft_id, timestamp ----|                            |
+  |                            |                            |
+  |-- loadMetadata() --------->|                            |
+  |                            |-- retrieve draft ---------->|
+  |                            |<-- metadata ----------------|
+  |<-- problem metadata -------|                            |
+  |                            |                            |
+  |-- validateMetadata() ----->|                            |
+  |                            |-- validate structure & content |
+  |<-- validation result ------|                            |
+  |                            |                            |
+  |-- commitMetadata() ------->|                            |
+  |                            |-- retrieve draft ---------->|
+  |                            |<-- draft data --------------|
+  |                            |-- create temp files -------|
+  |                            |-- build problem zip -------|
+  |                            |-- update/create problem --->|
+  |<-- problem_alias ----------|                            |
 
 ### Frontend
 
@@ -88,10 +236,10 @@ This project will:
 
 #### Integration Plan
 
-	1.	Embed Editor: Open Problem Creator in an <iframe> or modal.
-	2.	Data Passing: Use postMessage to send/receive JSON metadata between the iframe and parent.
-	3.	Metadata Binding: When saving, automatically fill in omegaUp’s form fields using returned metadata.
-	4.	UX Improvements: Show loading indicators, validation errors, and success confirmations.
+- Embed Editor: Open Problem Creator in an <iframe> or modal.
+- Data Passing: Use postMessage to send/receive JSON metadata between the iframe and parent.
+- Metadata Binding: When saving, automatically fill in omegaUp’s form fields using returned metadata.
+- UX Improvements: Show loading indicators, validation errors, and success confirmations.
 
 #### File Structure
 ```
@@ -154,17 +302,25 @@ frontend/www/js/omegaup/problem/
 
 ## Timeline and Hours
 
-| Period | Tasks | Estimated Hours |
-|--------|-------|-----------------|
-| Community Bonding (May 20 – June 16) | Understand omegaUp’s structure, study course repo workflow, submit minor PR | 20 |
-| Week 1–2 | GitHub integration and token auth | 40 |
-| Week 3–4 | Sync backend scripts and test with staging | 40 |
-| Week 5–6 | Add preview UI for maintainers, write automated CI validators | 50 |
-| Week 7–8 | Frontend UI for public GitHub content browsing | 50 |
-| Week 9–10 | UX polish, error handling, and fallback content logic | 40 |
-| Week 11 | Final QA, full demo test with course content | 30 |
-| Week 12 | Submit final code and documentation | 30 |
-| **Total** |  | **300+ hours** |
+
+| **Phase** | **Period** | **Tasks** | **Details** | **Estimated Hours** |
+|-----------|------------|-----------|-------------|---------------------|
+| 🧭 Phase 1: Planning & Architecture | Community Bonding (May 20 – June 16) | Explore codebase, repo structure, workflows | Study Problem Creator design, omegaUp backend, submit a minor bugfix PR | 20 |
+| | Week 1 | Design architecture | Define iframe-based flow, REST endpoints, DB schema for drafts/versioning | 15 |
+| | Week 2 | Write tech spec | Detail frontend/backend interfaces, postMessage contracts, security rules | 15 |
+| 🛠️ Phase 2: Backend Implementation | Week 3 | Draft save/load endpoints | Create `/saveMetadata`, `/loadMetadata`, file-based or DB draft storage | 25 |
+| | Week 4 | Validate and commit APIs | Add `/validateMetadata`, `/commitMetadata`, zip assembly, permissions check | 25 |
+| | Week 5 | Test case + versioning logic | Implement upload, preview, diff, rollback logic; update DB schema if needed | 30 |
+| | Week 6 | Integrate with ProblemController | Wire endpoints into existing create/edit logic; handle legacy zip workflows | 20 |
+| 💻 Phase 3: Frontend Integration | Week 7 | Build Vue modal/iframe UI | Embed Problem Creator, add tab navigation, use `postMessage` bridge | 30 |
+| | Week 8 | Draft autosave + state recovery | Implement timed autosave, load draft on reload, unsaved warning | 30 |
+| | Week 9 | Edit UI + version control | Add view/edit tabs, version history viewer, rollback options | 40 |
+| | Week 10 | Metadata, statement, test case editors | Build markdown preview, case validator UI, real-time field validation | 50 |
+| 🧪 Phase 4: Testing & QA | Week 11 | Backend + frontend test coverage | PHPUnit tests for APIs, Vue unit tests, Cypress end-to-end workflows | 30 |
+| | Week 12 | Manual QA, bug fixes, polish | Fix regressions, ensure backward compatibility, prepare demo test run | 20 |
+| 📚 Phase 5: Docs & Final Submission | Week 12 | Write user + dev documentation | Usage guide, dev notes, tutorial for adding/editing problems via new flow | 10 |
+| |  | Final submission | Upload code, write GSoC report, link screencast (optional) | 10 |
+| **TOTAL** | **May 20 – August 25** | | | **350 hours** |
 
 ---
 
