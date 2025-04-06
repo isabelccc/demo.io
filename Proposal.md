@@ -65,6 +65,8 @@ This project will:
    - Save problem metadata (title, validator, cases, statements) as JSON
    - Store as draft in `problems_draft/`
 possible request parameters:
+<pre lang="md">
+```ts
 {
   problem_alias: string;             // Unique alias for the problem
   title: string;                     // Problem title
@@ -103,14 +105,20 @@ possible request parameters:
     }>;
   };
 }
+```
+</pre>
 
 anticipated response:
 
-`{
+<pre lang="md">
+```ts
+{
   status: string;                   // 'ok' on success
   draft_id: number;                 // Unique identifier for this draft
   timestamp: number;                // Server timestamp of save
-}`
+}
+ ```
+</pre>
 2. `/api/problem/loadMetadata/` (GET)
    - Load metadata for existing problems
 requested parameter:
