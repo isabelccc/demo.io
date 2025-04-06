@@ -7,47 +7,19 @@
 **GitHub:** [isabelccc](https://github.com/isabelccc)  
 **GitHub Verification Handle:** cxl0603  
 
----
-
-## Synopsis
-
-The Problem Creator is a visual interface introduced in a past GSoC project to simplify the creation and editing of programming problems on omegaUp. However, it is not yet fully integrated into omegaUp's platform. Authors are still required to download `.zip` files from the Problem Creator and manually upload them to omegaUp, making the workflow cumbersome and unintuitive. This project aims to eliminate this zip-based workflow by integrating the Problem Creator directly into the create/edit problem UI, allowing for real-time, browser-based editing and saving.
-
----
-
-## Benefits to the Community
-
-This project will:
-- Simplify the problem authoring experience
-- Remove reliance on zip uploads/downloads
-- Enable real-time editing
-- Reduce entry barriers for educators and mentors
-- Increase contribution quality and accessibility
-
-By integrating directly into omegaUp, the community will benefit from a streamlined, modernized workflow that reflects modern expectations in education technology platforms.
-
----
-
-## Deliverables
-
-- RESTful backend endpoints for metadata save/load/validation/commit
-- Integration with existing ProblemController logic
-- Frontend iframe/modal for Problem Creator
-- Secure communication between omegaUp and the embedded editor
-- Autosave/draft/versioning support (optional)
-- Cypress e2e tests
-- Final documentation
 
 ---
 
 ## Technical Skills
 
-**Programming Languages:** Python, C++, PHP, TypeScript, JavaScript, SQL, Bash  
-**Frameworks & Tools:** Vue.js, React, Next.js, Flask, Node.js, Docker, Git, GitHub Actions, MySQL/PostgreSQL, REST APIs  
+**Programming Languages:** Python, C++, PHP, TypeScript, JavaScript, SQL, Bash
+**Frameworks & Tools:** Vue.js, React, Next.js, Flask, Node.js, Docker, Git, GitHub Actions, MySQL/PostgreSQL, REST APIs ,AWS
 
 **Experience:**
 - Implemented custom search engine and query compiler in C++
 - Built and deployed a web-based assistant (TriLearn) with React, Tailwind, Flask, and GPT-4 APIs
+
+**Link to omegaUp merged PRs: (at least one is required)**
 - Contributor to omegaUp: https://github.com/omegaup/omegaup/pull/8138, https://github.com/omegaup/omegaup/pull/8150
 
 ---
@@ -64,6 +36,14 @@ By integrating directly into omegaUp, the community will benefit from a streamli
 ## Motivation
 
 omegaUp’s mission to democratize competitive programming education resonates deeply with me. I’ve always been passionate about open learning and developer tools — and this project combines both. By eliminating zip-based workflows and enabling seamless problem creation, this proposal supports the broader vision of empowering instructors and mentors worldwide to contribute more easily.
+Benefits to the Community
+
+This project will:
+- Simplify the problem authoring experience
+- Remove reliance on zip uploads/downloads
+- Enable real-time editing
+- Reduce entry barriers for educators and mentors
+- Increase contribution quality and accessibility
 
 ---
 
