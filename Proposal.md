@@ -64,7 +64,7 @@ This project will:
 1. `/api/problem/saveMetadata/` (POST)
    - Save problem metadata (title, validator, cases, statements) as JSON
    - Store as draft in `problems_draft/`
-possible request parameters:
+- possible request parameters:
 <pre lang="md">
 ```ts
 {
@@ -108,7 +108,7 @@ possible request parameters:
 ```
 </pre>
 
-anticipated response:
+- anticipated response:
 
 <pre lang="md">
 ```ts
@@ -120,8 +120,8 @@ anticipated response:
  ```
 </pre>
 2. `/api/problem/loadMetadata/` (GET)
-   - Load metadata for existing problems
-requested parameter:
+- Load metadata for existing problems
+- requested parameter:
 
 <pre lang="md">
 ```ts
@@ -132,7 +132,7 @@ requested parameter:
  ```
 </pre>
 
-response (typecript):
+- response (typecript):
 <pre lang="md">
 ```ts
 {
@@ -152,8 +152,8 @@ response (typecript):
 
 3. `/api/problem/validateMetadata/` (POST)
    - Validate structure using existing ProblemParams logic
-     Request Parameters:  `Same as saveMetadata`
-     Response :
+   - Request Parameters:  `Same as saveMetadata`
+   - Response :
 <pre lang="md">
 ```ts
 {
@@ -170,7 +170,7 @@ response (typecript):
 
 4. `/api/problem/commitMetadata/` (POST)
    - Convert JSON to zip, use internal `apiCreate` or `apiUpdate`
-   Request Parameters:
+   - Request Parameters:
 <pre lang="md">
 ```ts
 {
@@ -180,7 +180,7 @@ response (typecript):
 }
  ```
 </pre>
-response:
+- response:
 <pre lang="md">
 ```ts
 {
