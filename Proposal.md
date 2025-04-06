@@ -50,8 +50,9 @@ This project will:
 ## Detailed Project Description
 
    
+<img width="556" alt="Screenshot 2025-04-05 at 10 48 36 PM" src="https://github.com/user-attachments/assets/cb32a11b-eb9a-41bf-81af-cf2b37dcb2e2" />
 
-<img width="600" alt="Screenshot 2025-04-05 at 10 46 17 PM" src="https://github.com/user-attachments/assets/1bc95f49-cf02-48ab-b808-258ee20d4da2" />
+
                
 
 ### Backend
