@@ -75,7 +75,7 @@ section {
     margin: 1rem auto;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    width: 50%
+    width: 80%
 }
 .card2 {
     background: white;
@@ -169,6 +169,7 @@ a:hover {
     display: block;
     margin-bottom: 4px;
     font-weight: bold;
+    width : 80%
   }
   
   .progress {
@@ -187,8 +188,14 @@ a:hover {
     border-bottom-right-radius: 2px;
     transition: width 0.5s ease-in-out;
   }
+  :root {
+    --nero: #ffffff;
+    --blue: #a0b9ef;
+  }
   
   .w-90 { width: 90%; }
+  .w-85 { width: 85%; }
   .w-80 { width: 80%; }
+  .w-75 { width: 75%; }
   .w-70 { width: 70%; }
   /* Add more as needed */
