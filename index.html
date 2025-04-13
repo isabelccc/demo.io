@@ -10,6 +10,7 @@
   <header>
     <h1>Welcome to My Demo</h1>
     <img src="myimage.png" alt="Demo Image">
+    <p>This is a simple static site hosted on GitHub Pages.</p>
   </header>
 
   <nav>
@@ -90,31 +91,36 @@
 
     <div class="card" id="projects">
       <h2>Projects</h2>
-          <strong>Trilearn (LLM-powered note-taking and summarization web application)</strong>
-          <strong>Relevant Skills:FLASK,TCP SOCKET, RESTFUL API ,MONGO DB, AWS,C++</strong>
-          <ul>
-            <li>Built a RESTful backend in Flask (Python) supporting asynchronous document parsing (PDF, DOCX, MP4), user authentication, and LLM-powered summarization—achieving an 85% average response success rate under concurrent load.</li>
-            <li>Developed a TCP socket-based communication system for real-time document processing, allowing users to interact with the backend for document parsing and summarization.</li>
-            <li>Implemented a secure authentication system using JWT tokens and password hashing for user authentication.</li>
-            <li>Utilized MongoDB for efficient data storage and retrieval, supporting scalable operations with over 100 concurrent users.</li>
-            <li>Deployed the application on AWS, ensuring high availability and scalability.</li>
+      <div class="project-item">
+        <strong>Trilearn (LLM-powered note-taking and summarization web application)</strong>
+        <strong class="skills-tag">Relevant Skills: FLASK, TCP SOCKET, RESTFUL API, MONGO DB, AWS, C++</strong>
+        <ul>
+          <li>Built a RESTful backend in Flask (Python) supporting asynchronous document parsing (PDF, DOCX, MP4), user authentication, and LLM-powered summarization—achieving an 85% average response success rate under concurrent load.</li>
+          <li>Developed a TCP socket-based communication system for real-time document processing, allowing users to interact with the backend for document parsing and summarization.</li>
+          <li>Implemented a secure authentication system using JWT tokens and password hashing for user authentication.</li>
+          <li>Utilized MongoDB for efficient data storage and retrieval, supporting scalable operations with over 100 concurrent users.</li>
+          <li>Deployed the application on AWS, ensuring high availability and scalability.</li>
         </ul>
-          <strong>Search Engine system design</strong>
-          <strong>Relevant Skills:Docker, google CloudRun, Python, HTML, MongoDB</strong>
-          <ul>
+      </div>
+      
+      <div class="project-item">
+        <strong>Search Engine System Design</strong>
+        <strong class="skills-tag">Relevant Skills: Docker, Google CloudRun, Python, HTML, MongoDB</strong>
+        <ul>
           <li>Built a multithreaded web crawler using C++ with TCP/UDP networking, respecting robots.txt, domain rate-limiting, and deduplication to fetch and parse over 1M web pages.</li>
           <li>Implemented a disk-based inverted index using memory-mapped posting lists and delta encoding, reducing storage size by 60% compared to naive representation.</li>
           <li>Implemented a robust caching mechanism to improve response times and reduce server load.</li>
-          <li> Designed and optimized custom Boolean query parser and executor, supporting AND, OR, NOT, and phrase queries with 5ms average response latency on a 10K-doc corpus.</li>
+          <li>Designed and optimized custom Boolean query parser and executor, supporting AND, OR, NOT, and phrase queries with 5ms average response latency on a 10K-doc corpus.</li>
           <li>Introduced query auto-suggest and spelling correction modules using Levenshtein distance + Trie index, reducing user query abandonment by ~25% in controlled tests.</li>
         </ul>
+      </div>
     </div>
 
     <div class="card" id="experience">
       <h2>Experience</h2>
       <div class="experience-item">
         <h3>Software Engineering Intern - Temu</h3>
-        <strong>Relevant Skills:Node.js, Express, WebSocket, MongoDB</strong>
+        <strong>Relevant Skills: Node.js, Express, WebSocket, MongoDB</strong>
         <p class="date">Summer 2024</p>
         <ul>
           <li>Developed and maintained microservices using Node.js and Express</li>
@@ -124,7 +130,7 @@
       </div>
       <div class="experience-item">
         <h3>OmegaUp Open Source Contributor</h3>
-        <strong>Relevant Skills: JavaScript, Python, Vue.js,Docker, HTML, MySQL, RESTFUL API</strong>
+        <strong>Relevant Skills: JavaScript, Python, Vue.js, Docker, HTML, MySQL, RESTFUL API</strong>
         <p class="date">2023 - Present</p>
         <ul>
           <li>Contributed to the development of OmegaUp, a competitive programming platform, by implementing new features and fixing bugs.</li>
