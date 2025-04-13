@@ -5,6 +5,11 @@ body {
     padding: 0;
     background: #f4f4f4;
     color: #333;
+    max-width: 80%;
+    margin: 0 auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 header {
@@ -67,7 +72,15 @@ section {
 .card {
     background: white;
     padding: 1.5rem;
-    margin: 1rem 0;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    width: 50%
+}
+.card2 {
+    background: white;
+    padding: 1.5rem;
+    margin: 1rem auto;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     width: 50%
@@ -150,3 +163,32 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.skills .item-text {
+    margin-left: 10px;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+  
+  .progress {
+    margin: 0.8rem 0;
+    border-radius: 10px;
+    height: 16px;
+    width: 100%;
+    background-color: var(--white); /* fallback: #eee */
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    background: var(--blue); /* fallback: #4caf50 */
+    height: 100%;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  .w-90 { width: 90%; }
+  .w-80 { width: 80%; }
+  .w-70 { width: 70%; }
+  /* Add more as needed */
