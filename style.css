@@ -5,8 +5,8 @@
     --white: #eee;
 }
 p {
-    margin: 0.5rem 0; /* controls vertical spacing */
-    line-height: 1.5; /* adjusts internal line spacing */
+    margin: 0.2rem auto; /* controls vertical spacing */
+    line-height: 1.1; /* adjusts internal line spacing */
   }
 
   .card#Education p {
@@ -20,8 +20,8 @@ p {
   }
   
   .education-list li {
-    margin-bottom: 0.4rem;
-    line-height: 1.4;
+    margin-bottom: 0.2rem;   /* reduced from 0.4rem */
+    line-height: 1.1;
   }
 /* Main styles */
 body {
@@ -157,8 +157,8 @@ section {
 }
 
 .card#projects li {
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: 0.2rem;   /* reduced from 0.4rem */
+    line-height: 1.1;
 }
 
 /* Experience styles */
@@ -199,8 +199,8 @@ section {
 }
 
 .experience-item li {
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
+    margin-bottom: 0.2rem;   /* reduced from 0.4rem */
+    line-height: 1.1;
 }
 
 /* Contact styles */
