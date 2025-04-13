@@ -4,7 +4,25 @@
     --blue: #a0b9ef;
     --white: #eee;
 }
+p {
+    margin: 0.5rem 0; /* controls vertical spacing */
+    line-height: 1.5; /* adjusts internal line spacing */
+  }
 
+  .card#Education p {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+  }
+  .education-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .education-list li {
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
 /* Main styles */
 body {
     font-family: Arial, sans-serif;
@@ -115,6 +133,7 @@ section {
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
 
 .card#projects strong {
     color: #007acc;
