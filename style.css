@@ -5,7 +5,8 @@ body {
     padding: 0;
     background: #f4f4f4;
     color: #333;
-    margin: 0 auto;
+    margin: 0.3rem auto;
+    line-height: 1.5;
     word-wrap: break-word;
     white-space: pre-wrap;
     overflow-wrap: break-word;
