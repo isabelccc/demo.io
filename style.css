@@ -30,18 +30,39 @@ body {
   display: flex;
   justify-content: center;
   padding: 2rem 0;
+  width: 100%;
 }
 
 .nav-container {
-  background-color: rgba(13, 13, 45, 0.8);
+  background-color: rgba(8, 8, 30, 0.7);
   border-radius: 50px;
-  padding: 0.8rem 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  padding: 1rem 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   width: 90%;
   max-width: 600px;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Add a subtle gradient overlay for the glass effect */
+.nav-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(115deg, 
+    rgba(255, 255, 255, 0.05) 0%, 
+    rgba(255, 255, 255, 0.02) 40%, 
+    rgba(255, 255, 255, 0) 60%);
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 50px;
 }
 
 .nav-links {
@@ -50,6 +71,7 @@ body {
   align-items: center;
   list-style: none;
   width: 100%;
+  position: relative;
 }
 
 .nav-links li {
@@ -63,6 +85,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .nav-links a:hover,
@@ -70,14 +93,37 @@ body {
   color: var(--accent-color);
 }
 
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
 /* Hero Heading Styles */
+.subtitle {
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
 .hero-title {
   font-family: 'Inter', sans-serif;
   font-size: clamp(3rem, 10vw, 6rem);
   font-weight: 900;
   text-align: center;
   line-height: 1.1;
-  margin: 6rem 0;
+  margin: 2rem 0;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -87,6 +133,14 @@ body {
 .accent {
   color: var(--accent-color);
   display: inline-block;
+}
+
+.intro-text {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Main content and footer */
