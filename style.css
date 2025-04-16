@@ -106,6 +106,21 @@ body {
   opacity: 0.8;
 }
 
+.nav-links a.email-button {
+  background-color: var(--accent-color);
+  color: var(--medium-blue);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-links a.email-button:hover {
+  background-color: #c7aef0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(179, 150, 227, 0.3);
+}
+
 /* Hero Heading Styles */
 .subtitle {
   text-align: center;
