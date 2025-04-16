@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- Scroll Reveal Library -->
+  <script src="https://unpkg.com/scrollreveal"></script>
   <!-- Meta description for SEO -->
   <meta name="description" content="Portfolio website showcasing my projects and skills as a Full Stack Developer">
 </head>
@@ -33,9 +35,10 @@
   <main>
     <p class="subtitle">DYNAMIC WEB MAGIC WITH PERSONAL PORTFOLIO</p>
     <h1 class="hero-title">Transforming Scratches into <span class="accent">Real-World Solutions</span></h1>
-    <p class="intro-text">Hi! I'm <span class="accent">Isabel Chen</span>, a Full Stack Developer.</p>
+    <p class="intro-text"><span class="animated-text">Hi! I'm </span><span class="accent animated-text">Isabel Chen</span><span class="animated-text">, a Full Stack Developer.</span></p>
     <a href="Isabel_chen.pdf" download class="cta-button">Download my CV<span class="arrow">→</span></a>
-
+    
+  
     <section id="feature-cards" class="feature-cards">
       <div class="flip-card">
         <div class="flip-card-inner">
@@ -269,9 +272,182 @@
     </section>
   </main>
   <section class="projects-section"></section>
+  <!-- Skills Marquee -->
+  <div class="skills-marquee-container">
+    <div class="skills-marquee">
+      <div class="skills-marquee-content">
+        <div class="marquee-skill">
+          <div class="marquee-icon js-icon"></div>
+          <span>JavaScript</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon react-icon"></div>
+          <span>React</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon nodejs-icon"></div>
+          <span>Node.js</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon nextjs-icon"></div>
+          <span>Next.js</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon python-icon"></div>
+          <span>Python</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon mongodb-icon"></div>
+          <span>MongoDB</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon html-icon"></div>
+          <span>HTML5</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon css-icon"></div>
+          <span>CSS</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon tailwind-icon"></div>
+          <span>Tailwind</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon docker-icon"></div>
+          <span>Docker</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon aws-icon"></div>
+          <span>AWS</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon Github-icon"></div>
+          <span>GitHub</span>
+        </div>
+      </div>
+      <!-- Duplicate content for seamless scrolling -->
+      <div class="skills-marquee-content">
+        <div class="marquee-skill">
+          <div class="marquee-icon js-icon"></div>
+          <span>JavaScript</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon react-icon"></div>
+          <span>React</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon nodejs-icon"></div>
+          <span>Node.js</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon nextjs-icon"></div>
+          <span>Next.js</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon python-icon"></div>
+          <span>Python</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon mongodb-icon"></div>
+          <span>MongoDB</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon html-icon"></div>
+          <span>HTML5</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon css-icon"></div>
+          <span>CSS</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon tailwind-icon"></div>
+          <span>Tailwind</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon docker-icon"></div>
+          <span>Docker</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon aws-icon"></div>
+          <span>AWS</span>
+        </div>
+        <div class="marquee-skill">
+          <div class="marquee-icon Github-icon"></div>
+          <span>GitHub</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2024 My Portfolio</p>
   </footer>
+
+  <!-- Scroll reveal configuration -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize ScrollReveal
+      const sr = ScrollReveal({
+        origin: 'bottom',
+        distance: '50px',
+        duration: 1000,
+        delay: 200,
+        easing: 'ease-in-out',
+        reset: false
+      });
+
+      // Apply to sections
+      sr.reveal('#work-experience', { 
+        delay: 300,
+        beforeReveal: function(el) {
+          el.classList.add('visible');
+        }
+      });
+      
+      sr.reveal('#projects', { 
+        delay: 400,
+        beforeReveal: function(el) {
+          el.classList.add('visible');
+        }
+      });
+      
+      sr.reveal('.project-card', {
+        interval: 300,
+        delay: 500,
+        beforeReveal: function(el) {
+          el.classList.add('visible');
+        }
+      });
+      
+      sr.reveal('.timeline-item', {
+        interval: 200,
+        delay: 300,
+        beforeReveal: function(el) {
+          el.classList.add('visible');
+        }
+      });
+      
+      // Text animation for intro text
+      const animatedText = document.querySelectorAll('.animated-text');
+      
+      animatedText.forEach(element => {
+        // Get the text content
+        const text = element.textContent;
+        // Clear the text content
+        element.textContent = '';
+        // Set the data-text attribute
+        element.setAttribute('data-text', text);
+        
+        // Split text into individual characters
+        for (let i = 0; i < text.length; i++) {
+          const charElement = document.createElement('span');
+          charElement.classList.add('char');
+          charElement.style.setProperty('--char-index', i);
+          charElement.textContent = text.charAt(i);
+          element.appendChild(charElement);
+        }
+      });
+    });
+  </script>
 </body>
 </html>

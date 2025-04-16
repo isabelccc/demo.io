@@ -1289,3 +1289,171 @@ footer {
     font-size: 1.4rem;
   }
 }
+
+/* Skills Marquee */
+.skills-marquee-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 3rem auto;
+  overflow: hidden;
+  position: relative;
+  background: rgba(15, 15, 40, 0.3);
+  padding: 1.5rem 0;
+  border-radius: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.skills-marquee {
+  display: flex;
+  width: fit-content;
+  animation: marquee 40s linear infinite;
+}
+
+.skills-marquee:hover {
+  animation-play-state: paused;
+}
+
+.skills-marquee-content {
+  display: flex;
+  align-items: center;
+}
+
+.marquee-skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem;
+  color: var(--text-color);
+}
+
+.marquee-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 8px;
+  background-color: #151531;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.marquee-icon::before {
+  transform: scale(0.7);
+}
+
+.marquee-skill span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.marquee-skill:hover .marquee-icon {
+  transform: translateY(-5px) scale(1.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.marquee-skill:hover span {
+  color: var(--accent-color);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-marquee-container {
+    padding: 1rem 0;
+  }
+  
+  .marquee-skill {
+    padding: 0 1rem;
+  }
+  
+  .marquee-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .marquee-skill span {
+    font-size: 0.65rem;
+  }
+}
+
+/* Scroll reveal styles */
+#work-experience,
+#projects,
+.project-card,
+.timeline-item {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#work-experience.visible,
+#projects.visible,
+.project-card.visible,
+.timeline-item.visible {
+  opacity: 1;
+}
+
+/* Ensure the parent container doesn't clip the animations */
+.projects-container,
+.timeline {
+  overflow: visible;
+}
+
+/* Animated Text */
+.animated-text {
+  display: inline-block;
+}
+
+.animated-text {
+  position: relative;
+  white-space: pre; /* Preserve spaces */
+}
+
+.animated-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* Character animation setup in JS */
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: jumpIn 0.5s forwards;
+  animation-delay: calc(var(--char-index) * 0.05s);
+}
+
+@keyframes jumpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
