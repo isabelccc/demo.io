@@ -22,6 +22,7 @@
         <ul class="nav-links">
           <li><a href="#" class="active">Home</a></li>
           <li><a href="#feature-cards">About</a></li>
+          <li><a href="#work-experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="mailto:cxl0603@gmail.com">Contact</a></li>
         </ul>
@@ -119,12 +120,69 @@
           </div>
         </div>
       </div>    
+    </section>
 
+    <!-- Timeline work experience section -->
+    <section id="work-experience" class="timeline-section">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+
+        <!-- OmegaUp -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Mar 2025 – Present</div>
+            <h3 class="timeline-title">OmegaUp Open-Source Contributor</h3>
+            <ul class="timeline-achievements">
+              <li>Notification System Enhancements: Redesigned the notification system to support delayed delivery and localization, boosting user engagement by 12%.</li>
+              <li>Data and Testing Infrastructure: Contributed to a new Python + Apache Beam ETL pipeline, reducing failures by 20%.</li>
+              <li>Crowdsourcing Platform Improvements: Built authoring/review modules for programming problems.</li>
+              <li>Developer Environment Modernization: Modernized local dev setup with Docker Compose.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Trilearn -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Jan 2025 – Present</div>
+            <h3 class="timeline-title">Trilearn Founder</h3>
+            <p class="timeline-subtitle">LLM-powered Note-Taking and Summarization Web App: Socket, C++, Flask, RESTful API, MongoDB, AWS, TCP</p>
+            <ul class="timeline-achievements">
+              <li>LLM-Powered Summarization Engine: Developed a RESTful backend with async document parsing (PDF, DOCX, MP4), user authentication, and LLM-based summarization.</li>
+              <li>Searchable Knowledge Base: Built a retrieval system using MongoDB and Express.js with custom indexing logic.</li>
+              <li>Scalable Infrastructure: Deployed services on AWS EC2 with S3-backed storage and CloudWatch monitoring.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Temu -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">May 2024 – Sep 2024</div>
+            <h3 class="timeline-title">Temu Software Engineer Intern</h3>
+            <p class="timeline-subtitle">Beijing, China</p>
+            <ul class="timeline-achievements">
+              <li>Scalable Data Pipelines: Designed web crawling and indexing pipelines, reducing data latency by 28%.</li>
+              <li>A/B Testing: Implemented testing framework that increased click-through rate by 3.1%.</li>
+              <li>System Optimization: Reduced response latency of critical services.</li>
+              <li>Software Testing: Developed end-to-end tests improving resolution time by 25%.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="timeline-contact">
+          <p>Email: <a href="mailto:cxl0603@gmail.com">cxl0603@gmail.com</a> | Mobile: +1734-882-9840</p>
+        </div>
+      </div>
     </section>
 
     <!-- Add this section after the skills section -->
     <section class="section">
-      <h2 class="section-title" class = "Projects">Projects</h2>
+      <h2 id="projects" class="section-title">Projects</h2>
       <div class="projects-container">
         <!-- Project 1 -->
         <div class="project-card">
@@ -178,34 +236,32 @@
           </div>
         </div>
         
-        <!-- Project 3 -->
-        <div class="project-card">
-          <img src="https://via.placeholder.com/700x380/0d0d2d/a5a5c8?text=MongoDB+API+Service" alt="MongoDB API Service Project" class="project-image">
+  
+        
+        <!-- Upcoming Project -->
+        <div class="project-card upcoming-project">
+          <div class="lock-overlay">
+            <div class="lock-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b396e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div class="upcoming-text">UPCOMING</div>
+          </div>
           <div class="project-content">
-            <h3 class="project-title">MongoDB API Service</h3>
-            <p class="project-description">Robust RESTful API service built with MongoDB, Express, and Node.js with comprehensive documentation and testing. Features authentication, data validation, and rate limiting.</p>
+            <h3 class="project-title">Social Media Hub for ChatGPT Users</h3>
+            <p class="project-description">A community platform for AI enthusiasts to share prompts, collaborate on projects, and explore creative use cases. Features user profiles, prompt marketplace, and integration with LLM APIs.</p>
             <div class="project-tech">
-              <span class="project-tech-item">MongoDB</span>
-              <span class="project-tech-item">Express</span>
-              <span class="project-tech-item">Node.js</span>
-              <span class="project-tech-item">Flask</span>
-              <span class="project-tech-item">Flask</span>
+              <span class="project-tech-item">React.js</span>
+              <span class="project-tech-item">Next.js</span>
+              <span class="project-tech-item">TypeScript</span>
+              <span class="project-tech-item">Firebase</span>
+              <span class="project-tech-item">OpenAI API</span>
+              <span class="project-tech-item">Supabase</span>
             </div>
             <div class="project-links">
-              <a href="#" class="project-link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-                GitHub
-              </a>
-              <a href="#" class="project-link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-                Documentation
-              </a>
+              <p class="coming-soon">Coming Soon</p>
             </div>
           </div>
         </div>
