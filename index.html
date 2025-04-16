@@ -3,112 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Demo Site</title>
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <nav class="navbar">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
-    
-    <div class="hero-section">
-      <p>DYNAMIC WEB MAGIC WITH PERSONAL PORTFOLIO</p>
-      <h1 class="hero-title">Transforming Concepts into <span class="accent-text">User Experiences</span></h1>
-      <p class="intro-text">Hi! I'm <span class="accent-text">Isabel Chen</span>, a Full Stack Developer.</p>
-      <a href="#projects" class="cta-button">Show my work →</a>
-    </div>
   </header>
 
-  <section>
-    <div class="card" id="about">
-      <h2>About This Project</h2>
-      <p>This project showcases how to deploy a demo site using GitHub Pages. It's a great way to present your work or portfolio.</p>
-      <p>I'm a Computer Science student passionate about building innovative software solutions that make a difference. My interests include distributed systems, machine learning, and web development.</p>
-    </div>
-
-    <div class="card" id="projects">
-      <h2>Projects</h2>
-      <div class="project-item">
-        <strong>Trilearn (LLM-powered note-taking and summarization web application)</strong>
-        <strong class="skills-tag">Relevant Skills: FLASK, TCP SOCKET, RESTFUL API, MONGO DB, AWS, C++</strong>
-        <ul>
-          <li>Built a RESTful backend in Flask (Python) supporting asynchronous document parsing (PDF, DOCX, MP4), user authentication, and LLM-powered summarization—achieving an 85% average response success rate under concurrent load.</li>
-          <li>Developed a TCP socket-based communication system for real-time document processing, allowing users to interact with the backend for document parsing and summarization.</li>
-          <li>Implemented a secure authentication system using JWT tokens and password hashing for user authentication.</li>
-          <li>Utilized MongoDB for efficient data storage and retrieval, supporting scalable operations with over 100 concurrent users.</li>
-          <li>Deployed the application on AWS, ensuring high availability and scalability.</li>
-        </ul>
-      </div>
-      
-      <div class="project-item">
-        <strong>Search Engine System Design</strong>
-        <strong class="skills-tag">Relevant Skills: Docker, Google CloudRun, Python, HTML, MongoDB</strong>
-        <ul>
-          <li>Built a multithreaded web crawler using C++ with TCP/UDP networking, respecting robots.txt, domain rate-limiting, and deduplication to fetch and parse over 1M web pages.</li>
-          <li>Implemented a disk-based inverted index using memory-mapped posting lists and delta encoding, reducing storage size by 60% compared to naive representation.</li>
-          <li>Implemented a robust caching mechanism to improve response times and reduce server load.</li>
-          <li>Designed and optimized custom Boolean query parser and executor, supporting AND, OR, NOT, and phrase queries with 5ms average response latency on a 10K-doc corpus.</li>
-          <li>Introduced query auto-suggest and spelling correction modules using Levenshtein distance + Trie index, reducing user query abandonment by ~25% in controlled tests.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card" id="Education">
-      <h2>Education</h2>
-      <div class="education-content">
-        <ul class="education-list">
-          <li><strong>Degree:</strong> Bachelor of Science in Computer Science</li>
-          <li><strong>University:</strong> University of Michigan Ann Arbor</li>
-          <li><strong>Graduation:</strong> Expected 2025</li>
-          <li><strong>Minor:</strong> Statistics</li>
-          <li><strong>Relevant Coursework:</strong> Data Structures, Algorithms, Operating Systems, Databases, Machine Learning</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card" id="experience">
-      <h2>Experience</h2>
-      <div class="experience-item">
-        <h3>Software Engineering Intern - Temu</h3>
-        <strong>Relevant Skills: Node.js, Express, WebSocket, MongoDB</strong>
-        <p class="date">Summer 2024</p>
-        <ul>
-          <li>Developed and maintained microservices using Node.js and Express</li>
-          <li>Implemented real-time data synchronization features using WebSocket</li>
-          <li>Improved API response times by 40% through caching optimization</li>
-        </ul>
-      </div>
-      <div class="experience-item">
-        <h3>OmegaUp Open Source Contributor</h3>
-        <strong>Relevant Skills: JavaScript, Python, Vue.js, Docker, HTML, MySQL, RESTFUL API</strong>
-        <p class="date">2023 - Present</p>
-        <ul>
-          <li>Contributed to the development of OmegaUp, a competitive programming platform, by implementing new features and fixing bugs.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card" id="contact">
-      <h2>Contact</h2>
-      <p>Feel free to <a href="mailto:cxl0603@gmail.com">email me</a> with any questions.</p>
-      <div class="social-links">
-        <p>Find me on:</p>
-        <ul>
-          <li><a href="https://github.com/isabelccc">GitHub</a></li>
-          <li><a href="https://linkedin.com/in/isabelccc">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <main>
+    <h1 class="hero-title">Transforming Concepts into <span class="accent">Real-World Solutions</span></h1>
+    <a href="Isabel_resume.pdf" download class="cta-button">Download my CV<span class="arrow">→</span></a>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Isabel C. | Powered by GitHub Pages</p>
+    <p>&copy; 2024 My Portfolio</p>
   </footer>
 </body>
 </html>
