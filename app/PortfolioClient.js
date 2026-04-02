@@ -2,6 +2,9 @@
 
 import SplineSection from './SplineSection';
 
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const resumePath = `${base}/Isabel_chen.pdf`;
+
 export default function PortfolioClient() {
   return (
     <div className="ae-wrap">
@@ -21,7 +24,7 @@ export default function PortfolioClient() {
         <ul className="ae-links">
           <li><a href="https://github.com/isabelccc" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           <li><a href="mailto:cxl0603@gmail.com">Email</a></li>
-          <li><a href="/Isabel_chen.pdf" download>Resume</a></li>
+          <li><a href={resumePath} download>Resume</a></li>
         </ul>
       </section>
 

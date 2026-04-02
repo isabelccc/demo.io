@@ -5,6 +5,9 @@ const basePath = process.env.GITHUB_PAGES === '1' ? '/demo.io' : '';
 
 const nextConfig = {
   output: 'export',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   ...(basePath ? { basePath, assetPrefix: basePath } : {}),
 };
 
