@@ -147,6 +147,24 @@ export default function PortfolioClient() {
 
         <article className="ae-project">
           <h3>
+            Cartograph
+            <span className="ae-wip">In progress</span>
+          </h3>
+          <p className="ae-subline">Headless e-commerce (Vendure-style)</p>
+          <p className="ae-tech">
+            TypeScript · Drizzle ORM · PostgreSQL · Node.js · GraphQL · plugin-oriented core
+          </p>
+          <p>
+            Building a TypeScript-first commerce backend inspired by{' '}
+            <a href="https://vendure.io/" target="_blank" rel="noopener noreferrer">Vendure</a>
+            —extensible catalog, orders, and admin APIs with a clean data layer via Drizzle and room for storefronts and
+            custom channels.
+          </p>
+          <p className="ae-project-note">Repository link coming soon.</p>
+        </article>
+
+        <article className="ae-project">
+          <h3>
             terilearn
             <span className="ae-project-year">2025</span>
           </h3>
@@ -192,7 +210,7 @@ export default function PortfolioClient() {
           <strong>Python</strong> · <strong>TypeScript</strong> · JavaScript · PHP · C++ · SQL
         </p>
         <p className="ae-skills-block">
-          <strong>Backend &amp; data</strong> MySQL · Redis · ClickHouse · DynamoDB · Node.js · Express · REST · WebSocket
+          <strong>Backend &amp; data</strong> MySQL · Redis · ClickHouse · DynamoDB · PostgreSQL · Drizzle · Node.js · Express · REST · WebSocket · GraphQL
         </p>
         <p className="ae-skills-block">
           <strong>Infra</strong> Docker · Linux · AWS (Lambda, API Gateway) · GKE · CI/CD · microservices
