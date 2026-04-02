@@ -1,13 +1,14 @@
 {
   "name": "portfolio-website",
+  "type": "module",
   "version": "1.0.0",
   "description": "A personal portfolio website",
   "main": "index.html",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "next build && gh-pages -d out"
   },
   "keywords": [
     "portfolio",
@@ -18,5 +19,12 @@
   "devDependencies": {
     "gh-pages": "^6.1.0",
     "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/viewer": "^1.12.61",
+    "next": "^14.2.35",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
-} 
+}

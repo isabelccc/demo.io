@@ -1,0 +1,216 @@
+'use client';
+
+import SplineSection from './SplineSection';
+
+export default function PortfolioClient() {
+  return (
+    <div className="ae-wrap">
+      <header className="ae-header">
+        <a href="#">Isabel Chen</a>
+      </header>
+
+      <section className="ae-hero">
+        <h1>Isabel Chen</h1>
+        <p className="ae-lead">
+          Software engineer with experience across backend services, distributed systems, and full-stack web tools—from
+          contest platforms and search infra to analytics pipelines and research tooling.
+        </p>
+        <p className="ae-edu">
+          <em>University of Michigan, Ann Arbor · B.S. Computer Science · Graduated August 2025.</em>
+        </p>
+        <ul className="ae-links">
+          <li><a href="https://github.com/isabelccc" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="mailto:cxl0603@gmail.com">Email</a></li>
+          <li><a href="/Isabel_chen.pdf" download>Resume</a></li>
+        </ul>
+      </section>
+
+      <ul className="ae-highlights">
+        <li>
+          <strong>100K+</strong> users on a coding contest platform; secure multi-language execution in ephemeral Docker
+          sandboxes with isolation, limits, and sub-second to seconds-level feedback
+        </li>
+        <li>
+          <strong>85%</strong> API latency reduction (<strong>300ms → 50ms</strong>); analytics interfaces serving{' '}
+          <strong>50K+</strong> monthly queries
+        </li>
+        <li>
+          <strong>60%</strong> lower database error rates and <strong>35%</strong> MTTR improvement via persistence-layer
+          reliability work (queries, transactions, schema constraints)
+        </li>
+        <li>
+          Distributed C++ crawler/indexer at <strong>~10K docs/sec</strong>; search at <strong>P50 5ms</strong> /{' '}
+          <strong>P95 20ms</strong> / <strong>P99 50ms</strong> with <strong>85–95%</strong> cache hit rate on hot URLs
+        </li>
+      </ul>
+
+    
+
+      <section id="experience" className="ae-section">
+        <h2>Experience</h2>
+
+        <div className="ae-block">
+          <h3>OmegaUp</h3>
+          <p className="ae-meta">Software Developer · PHP · MySQL · Redis · Python · Remote · Oct 2025 – Present</p>
+          <p className="ae-subline">Education platform</p>
+          <ul>
+            <li>
+              Resolved cross-stack production issues across backend services, MySQL, and Redis on Linux, improving
+              reliability for a coding contest platform serving <strong>100K+</strong> users with large-scale concurrent code
+              runs.
+            </li>
+            <li>
+              Designed and implemented a secure multi-language code execution platform using ephemeral Docker sandboxes
+              (network / file-system isolation, CPU and memory limits, timeouts) for untrusted code, delivering{' '}
+              <strong>sub-second to seconds-level</strong> execution feedback.
+            </li>
+            <li>
+              Persistence-layer reliability engineering (query optimization, transaction boundaries, schema constraint
+              remediation): <strong>60%</strong> reduction in database error rates and <strong>35%</strong> lower MTTR.
+            </li>
+          </ul>
+        </div>
+
+        <div className="ae-block">
+          <h3>Springer Capital</h3>
+          <p className="ae-meta">Full Stack Developer Intern · Python · TypeScript · WebSocket · Chicago, IL · Aug 2025 – Oct 2025</p>
+          <p className="ae-subline">Financial services</p>
+          <ul>
+            <li>
+              Re-architected analytics pipelines (Python, Redis, ClickHouse) on a small team:{' '}
+              <strong>85%</strong> API latency reduction (<strong>300ms → 50ms</strong>) and real-time data dashboards.
+            </li>
+            <li>
+              Shipped TypeScript workflow features and real-time views using REST and WebSocket APIs for latency-sensitive
+              internal tools.
+            </li>
+            <li>
+              End-to-end analytics dashboards (React, TypeScript) handling <strong>50K+</strong> monthly queries for
+              enterprise decision-making.
+            </li>
+            <li>
+              CI/CD consolidating <strong>12</strong> microservices into a monorepo with automated GKE deployments: release
+              cycles from <strong>30 minutes → 5 minutes</strong>.
+            </li>
+          </ul>
+        </div>
+
+        <div className="ae-block">
+          <h3>University of Michigan</h3>
+          <p className="ae-meta">Software Engineering Intern &amp; Research Assistant · Ann Arbor, MI · Aug 2024 – Mar 2025</p>
+          <ul>
+            <li>
+              Optimized backend data retrieval with TypeScript and state management improvements:{' '}
+              <strong>15%</strong> faster server response times.
+            </li>
+            <li>
+              Led <strong>5</strong> interns building a web-based email management platform (React, Node.js) with Google OAuth
+              2.0 and Gmail API integration.
+            </li>
+            <li>
+              AWS Lambda pipeline (Python, DynamoDB, API Gateway) for research activity logging—saved researchers{' '}
+              <strong>50+</strong> hours per month.
+            </li>
+          </ul>
+        </div>
+
+        <div className="ae-block">
+          <h3>Temu</h3>
+          <p className="ae-meta">Software Engineer Intern · C++ · Redis · Shanghai, China · Jun 2024 – Sep 2024</p>
+          <p className="ae-subline">E-commerce</p>
+          <ul>
+            <li>
+              C++ distributed crawler/indexer with <strong>16</strong> worker threads:{' '}
+              <strong>~10K docs/sec</strong> index-build throughput via segment-based indexing.
+            </li>
+            <li>
+              Low-latency search at scale with Redis caching: <strong>P50 5ms</strong> / <strong>P95 20ms</strong> /{' '}
+              <strong>P99 50ms</strong>, <strong>85–95%</strong> cache hit rate on hot URLs.
+            </li>
+            <li>
+              Crawl deduplication cut redundant fetches by <strong>60–80%</strong>, reducing bandwidth and processing
+              overhead.
+            </li>
+            <li>
+              Linear-scaling indexing/storage pipelines: ~<strong>2GB</strong> memory per <strong>1M</strong> docs, stable{' '}
+              <strong>60–70%</strong> CPU under multicore load.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects" className="ae-section">
+        <h2>Projects</h2>
+        <p className="ae-repos-link">
+          <a href="https://github.com/isabelccc?tab=repositories" target="_blank" rel="noopener noreferrer">All repositories on GitHub →</a>
+        </p>
+
+        <article className="ae-project">
+          <h3>
+            terilearn
+            <span className="ae-project-year">2025</span>
+          </h3>
+          <p className="ae-tech">TypeScript · full stack · learning / AI product</p>
+          <p>
+            Learning-focused product work in TypeScript—content workflows, quizzes, and tooling aimed at making study
+            and review faster (aligned with Trilearn-style AI learning features).
+          </p>
+          <a href="https://github.com/isabelccc/terilearn" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </article>
+
+        <article className="ae-project">
+          <h3>
+            web-crawler
+            <span className="ae-project-year">2025</span>
+          </h3>
+          <p className="ae-tech">C++ · multithreading · search / indexing</p>
+          <p>
+            C++ crawler and indexing-oriented codebase (MIT)—pairs well with distributed search and high-throughput
+            crawl work (e.g. Temu-scale indexing and segment-based pipelines).
+          </p>
+          <a href="https://github.com/isabelccc/web-crawler" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </article>
+
+        <article className="ae-project">
+          <h3>
+            mern-memories
+            <span className="ae-project-year">2024</span>
+          </h3>
+          <p className="ae-tech">React · Node.js · Express · MongoDB · Redux · Material-UI · JWT · Google OAuth</p>
+          <p>
+            Full-stack social “memories” app: authentication, CRUD, search and filters, responsive UI—classic MERN with
+            Google OAuth.
+          </p>
+          <a href="https://github.com/isabelccc/mern-memories" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </article>
+      </section>
+
+      <section id="skills" className="ae-section">
+        <h2>Skills</h2>
+        <p className="ae-skills-block">
+          <strong>Languages</strong>{' '}
+          <strong>Python</strong> · <strong>TypeScript</strong> · JavaScript · PHP · C++ · SQL
+        </p>
+        <p className="ae-skills-block">
+          <strong>Backend &amp; data</strong> MySQL · Redis · ClickHouse · DynamoDB · Node.js · Express · REST · WebSocket
+        </p>
+        <p className="ae-skills-block">
+          <strong>Infra</strong> Docker · Linux · AWS (Lambda, API Gateway) · GKE · CI/CD · microservices
+        </p>
+        <p className="ae-skills-block">
+          <strong>Frontend</strong> React · HTML/CSS · Tailwind · Material-UI · Redux
+        </p>
+      </section>
+
+      <section id="education" className="ae-section">
+        <h2>Education</h2>
+        <div className="ae-edu-card">
+          <h3>University of Michigan — Ann Arbor</h3>
+          <p>Bachelor&apos;s, Computer Science · Graduated August 2025</p>
+        </div>
+      </section>
+
+      <footer className="ae-footer">© 2026 Isabel Chen</footer>
+    </div>
+  );
+}
