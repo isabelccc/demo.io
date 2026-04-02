@@ -168,7 +168,7 @@ export default function PortfolioClient() {
 
         <article className="ae-project">
           <h3>
-            terilearn
+            terilearn{' '}
             <span className="ae-project-year">2025</span>
           </h3>
           <p className="ae-tech">TypeScript · full stack · learning / AI product</p>
@@ -181,7 +181,7 @@ export default function PortfolioClient() {
 
         <article className="ae-project">
           <h3>
-            web-crawler
+            web-crawler{' '}
             <span className="ae-project-year">2025</span>
           </h3>
           <p className="ae-tech">C++ · multithreading · search / indexing</p>
@@ -194,13 +194,18 @@ export default function PortfolioClient() {
 
         <article className="ae-project">
           <h3>
-            mern-memories
+            Cove{' '}
             <span className="ae-project-year">2024</span>
           </h3>
-          <p className="ae-tech">React · Node.js · Express · MongoDB · Redux · Material-UI · JWT · Google OAuth</p>
+          <p className="ae-tech">
+            React · Redux · Material-UI · Node.js · Express · MongoDB · JWT · Google OAuth · search · pagination ·
+            moderation
+          </p>
           <p>
-            Full-stack social “memories” app: authentication, CRUD, search and filters, responsive UI—classic MERN with
-            Google OAuth.
+            Cove is a MERN-stack app for invite-only “circles”: members share photo posts, comments, and tags in a
+            private space (no public discovery). The React + Redux + Material-UI client talks to a Node/Express + MongoDB
+            API with JWT and Google sign-in, content moderation, search, pagination, and user profiles—packaged as a
+            full-stack social product focused on trusted groups rather than open feeds.
           </p>
           <a href="https://github.com/isabelccc/mern-memories" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
         </article>
