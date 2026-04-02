@@ -10,6 +10,9 @@ on:
     branches: [main, master]
   workflow_dispatch:
 
+env:
+  GITHUB_PAGES: '1'
+
 permissions:
   contents: read
   pages: write
@@ -37,6 +40,17 @@ jobs:
         env:
           GITHUB_PAGES: '1'
           GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Verify CSS/JS paths include repo base (fixes unstyled site)
+        run: |
+          REPO="${GITHUB_REPOSITORY##*/}"
+          test -f out/index.html
+          grep -q "/${REPO}/_next/" out/index.html || {
+            echo "ERROR: index.html must reference /${REPO}/_next/ — check next.config.js basePath."
+            head -c 800 out/index.html || true
+            exit 1
+          }
+          echo "OK: assets use base path /${REPO}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
