@@ -261,15 +261,117 @@ body {
 }
 
 .ae-preview {
-  margin: 1rem 0 1.15rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  overflow: hidden;
+  --ae-preview-radius: 11px;
+  margin: 1.35rem 0 1.25rem;
+  border-radius: var(--ae-preview-radius);
   background: #fff;
-  height: clamp(280px, 52vw, 460px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset,
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 12px 40px -12px rgba(0, 0, 0, 0.12);
+  height: clamp(300px, 58vw, 500px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.ae-preview iframe {
+.ae-preview-chrome {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.6rem 0.55rem 0.55rem;
+  background: linear-gradient(180deg, #f4f4f4 0%, #ebebeb 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.ae-preview-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 0.15rem;
+}
+
+.ae-preview-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #cfcfcf;
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.08);
+}
+
+.ae-preview-dots span:nth-child(1) {
+  background: #d8d8d8;
+}
+
+.ae-preview-dots span:nth-child(2) {
+  background: #cecece;
+}
+
+.ae-preview-dots span:nth-child(3) {
+  background: #c4c4c4;
+}
+
+.ae-preview-url {
+  flex: 1;
+  min-width: 0;
+  padding: 0.35rem 0.5rem;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  color: var(--text-light);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ae-preview-open {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.32rem 0.45rem;
+  border-radius: 5px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  text-underline-offset: unset;
+  text-decoration-color: transparent;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+
+.ae-project .ae-preview-open {
+  font-size: 0.6875rem;
+  text-decoration: none;
+}
+
+.ae-preview-open:hover {
+  color: var(--link-hover);
+  border-color: rgba(0, 102, 204, 0.25);
+  text-decoration: none;
+}
+
+.ae-preview-open-icon {
+  font-size: 0.8125rem;
+  line-height: 1;
+  opacity: 0.75;
+}
+
+.ae-preview-body {
+  flex: 1;
+  min-height: 0;
+  background: #eee;
+}
+
+.ae-preview-body iframe {
   width: 100%;
   height: 100%;
   border: 0;

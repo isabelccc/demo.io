@@ -208,11 +208,32 @@ export default function PortfolioClient() {
             full-stack social product focused on trusted groups rather than open feeds.
           </p>
           <div className="ae-preview">
-            <iframe
-              src="https://cove-gamma.vercel.app/"
-              title="Cove live demo"
-              loading="lazy"
-            />
+            <div className="ae-preview-chrome">
+              <div className="ae-preview-dots" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
+              <div className="ae-preview-url">cove-gamma.vercel.app</div>
+              <a
+                className="ae-preview-open"
+                href="https://cove-gamma.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open
+                <span className="ae-preview-open-icon" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            </div>
+            <div className="ae-preview-body">
+              <iframe
+                src="https://cove-gamma.vercel.app/"
+                title="Cove live demo"
+                loading="lazy"
+              />
+            </div>
           </div>
           <p className="ae-project-links">
             <a href="https://cove-gamma.vercel.app/" target="_blank" rel="noopener noreferrer">Open live demo →</a>
