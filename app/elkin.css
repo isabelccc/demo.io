@@ -260,6 +260,31 @@ body {
   color: var(--link-hover);
 }
 
+.ae-preview {
+  margin: 1rem 0 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  height: clamp(280px, 52vw, 460px);
+}
+
+.ae-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.ae-project-links {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.ae-project-links-sep {
+  color: var(--text-light);
+}
+
 .ae-skills-block {
   margin-bottom: 1.25rem;
   font-size: 0.9375rem;

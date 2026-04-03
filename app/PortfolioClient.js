@@ -207,7 +207,20 @@ export default function PortfolioClient() {
             API with JWT and Google sign-in, content moderation, search, pagination, and user profiles—packaged as a
             full-stack social product focused on trusted groups rather than open feeds.
           </p>
-          <a href="https://github.com/isabelccc/mern-memories" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          <div className="ae-preview">
+            <iframe
+              src="https://cove-gamma.vercel.app/"
+              title="Cove live demo"
+              loading="lazy"
+            />
+          </div>
+          <p className="ae-project-links">
+            <a href="https://cove-gamma.vercel.app/" target="_blank" rel="noopener noreferrer">Open live demo →</a>
+            <span className="ae-project-links-sep" aria-hidden="true">
+              {' · '}
+            </span>
+            <a href="https://github.com/isabelccc/mern-memories" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          </p>
         </article>
       </section>
 
@@ -228,13 +241,7 @@ export default function PortfolioClient() {
         </p>
       </section>
 
-      <section id="education" className="ae-section">
-        <h2>Education</h2>
-        <div className="ae-edu-card">
-          <h3>University of Michigan — Ann Arbor</h3>
-          <p>Bachelor&apos;s, Computer Science · Graduated August 2025</p>
-        </div>
-      </section>
+      
 
       <footer className="ae-footer">© 2026 Isabel Chen</footer>
     </div>
