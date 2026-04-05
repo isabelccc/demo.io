@@ -168,6 +168,57 @@ export default function PortfolioClient() {
 
         <article className="ae-project">
           <h3>
+            PortCheck{' '}
+            <span className="ae-project-year">2026</span>
+          </h3>
+          <p className="ae-subline">Disclosure documents · DAG approvals · compliance demo</p>
+          <p className="ae-tech">
+            Next.js · React · TypeScript · PostgreSQL · Drizzle ORM · Turborepo · Server Actions · React Flow
+          </p>
+          <p>
+            Monorepo demo for versioned fund disclosure documents: parallel review workflows modeled as a DAG (React
+            Flow), server-enforced QA and sign-off gates, filing workspace with checklists and redlines, and an append-only
+            audit trail—business rules enforced in Server Actions, not UI-only.
+          </p>
+          <div className="ae-preview">
+            <div className="ae-preview-chrome">
+              <div className="ae-preview-dots" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
+              <div className="ae-preview-url">port-check.vercel.app/documents</div>
+              <a
+                className="ae-preview-open"
+                href="https://port-check.vercel.app/documents"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open
+                <span className="ae-preview-open-icon" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            </div>
+            <div className="ae-preview-body">
+              <iframe
+                src="https://port-check.vercel.app/documents"
+                title="PortCheck documents demo"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <p className="ae-project-links">
+            <a href="https://port-check.vercel.app/documents" target="_blank" rel="noopener noreferrer">Open live demo →</a>
+            <span className="ae-project-links-sep" aria-hidden="true">
+              {' · '}
+            </span>
+            <a href="https://github.com/isabelccc/PortCheck" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          </p>
+        </article>
+
+        <article className="ae-project">
+          <h3>
             terilearn{' '}
             <span className="ae-project-year">2025</span>
           </h3>
