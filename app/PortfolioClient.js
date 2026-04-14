@@ -168,6 +168,28 @@ export default function PortfolioClient() {
 
         <article className="ae-project">
           <h3>
+            Meridian{' '}
+            <span className="ae-project-year">2026</span>
+          </h3>
+          <p className="ae-subline">Edge-style HTTP proxy · systems programming challenge</p>
+          <p className="ae-tech">
+            Systems · networking · HTTP · concurrency · observability-minded design
+          </p>
+          <p>
+            A from-scratch exploration of what sits between clients and upstreams: connection lifecycle, request
+            forwarding, back-pressure, and the sharp edges where correctness meets performance. Built as a focused
+            systems challenge—tight scope, clear contracts, and room to iterate on routing, resilience, and how the
+            proxy behaves under load.
+          </p>
+          <p className="ae-project-links">
+            <a href="https://github.com/isabelccc/prox-challenge" target="_blank" rel="noopener noreferrer">
+              View on GitHub →
+            </a>
+          </p>
+        </article>
+
+        <article className="ae-project">
+          <h3>
             PortCheck{' '}
             <span className="ae-project-year">2026</span>
           </h3>
