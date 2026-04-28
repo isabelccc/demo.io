@@ -153,17 +153,21 @@ export default function PortfolioClient() {
             Cartograph
             <span className="ae-wip">In progress</span>
           </h3>
-          <p className="ae-subline">Headless e-commerce (Vendure-style)</p>
+          <p className="ae-subline">Headless commerce core (Vendure-style kernel)</p>
           <p className="ae-tech">
-            TypeScript · Drizzle ORM · PostgreSQL · Node.js · GraphQL · plugin-oriented core
+            TypeScript · Node.js · Drizzle ORM · SQLite · REST · plugin/kernel · BullMQ-ready workers
           </p>
           <p>
-            Building a TypeScript-first commerce backend inspired by{' '}
+            Monorepo commerce backend inspired by{' '}
             <a href="https://vendure.io/" target="_blank" rel="noopener noreferrer">Vendure</a>
-            —extensible catalog, orders, and admin APIs with a clean data layer via Drizzle and room for storefronts and
-            custom channels.
+            : catalog, carts, checkout with inventory reservation, Stripe, multi-tenant admin vs shop APIs, transactional
+            outbox, and optional OIDC—with a slim core-api composition layer and domain logic in shared packages.
           </p>
-          <p className="ae-project-note">Repository link coming soon.</p>
+          <p className="ae-project-links">
+            <a href="https://github.com/isabelccc/cartograph" target="_blank" rel="noopener noreferrer">
+              View on GitHub →
+            </a>
+          </p>
         </article>
 
         <article className="ae-project">
